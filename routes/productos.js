@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
 });
 
 // WS actualizar registro
-router.put('/', function(req, res){
+router.put('/:id', function(req, res){
   controller.edit(req, res);
   // val_id = req.body.codigo;
   // val_nombre = req.body.descripcion;

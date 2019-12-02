@@ -39,12 +39,12 @@ let productosXamarin = {
     });
   },
   edit( req, res ){
-    val_id        =   req.body.codigo;
+    val_id = req.params.id;
     val_nombre    =   req.body.descripcion;
     val_precio    =   req.body.precio;
     val_vendido   =   req.body.vendido
-    let sql = "UPDATE productosXamarin SET descripcion=?, precio=? WHERE codigo=?";
-    db.query(sql,[val_nombre,val_precio,val_id],function(err, newData){
+    let sql = "UPDATE productosXamarin SET descripcion=?, precio=?, vendido=? WHERE codigo=?";
+    db.query(sql,[val_nombre,val_precio,val_vendido, val_id],function(err, newData){
       if(err){
         res.json(err);
         // res.sendStatus(500);
