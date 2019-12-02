@@ -13,10 +13,11 @@ let productosXamarin = {
     });
   },
   store( req, res ){
-    val_nombre = req.body.descripcion;
-    val_precio = req.body.precio;
-    let sql = "INSERT INTO productosXamarin(descripcion,precio) VALUES(?,?)";
-    db.query(sql,[val_nombre,val_precio],function(err, newData){
+    val_nombre    =   req.body.descripcion;
+    val_precio    =   req.body.precio;
+    val_vendido   =   req.body.vendido
+    let sql = "INSERT INTO productosXamarin(descripcion, precio, vendido) VALUES(?,?,?)";
+    db.query(sql,[val_nombre,val_precio, val_vendido],function(err, newData){
       if(err){
         console.log(err);
         res.sendStatus(500);
@@ -38,9 +39,10 @@ let productosXamarin = {
     });
   },
   edit( req, res ){
-    val_id = req.body.codigo;
-    val_nombre = req.body.descripcion;
-    val_precio = req.body.precio;
+    val_id        =   req.body.codigo;
+    val_nombre    =   req.body.descripcion;
+    val_precio    =   req.body.precio;
+    val_vendido   =   req.body.vendido
     let sql = "UPDATE productosXamarin SET descripcion=?, precio=? WHERE codigo=?";
     db.query(sql,[val_nombre,val_precio,val_id],function(err, newData){
       if(err){

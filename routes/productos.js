@@ -17,7 +17,7 @@ router.get('/mostrar/:id', function(req, res, next) {
 
 // WS crear registro
 router.post('/', function(req, res) {
-  controller.post(req, res)
+  controller.store(req, res)
   // img_path = req.files;
   // val_nombre = req.body.descripcion;
   // val_precio = req.body.precio;
